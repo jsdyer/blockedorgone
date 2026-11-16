@@ -1,0 +1,54 @@
+[
+  {
+    "id": "discord-tr",
+    "country": "Türkiye",
+    "code": "TR",
+    "domain": "discord.com",
+    "since": "2024-10-01",
+    "until": "2024-10-22",
+    "eventDate": "2024-10-08",
+    "description": "OONI reported that its tests began showing signs of restrictions on Discord in Türkiye on October 8, 2024. Compare the measurements around that date with the Russia case.",
+    "report": "https://explorer.ooni.org/findings/2025-turkiye-blocked-discord",
+    "sampleMeasurements": true
+  },
+  {
+    "id": "discord-ru",
+    "country": "Russia",
+    "code": "RU",
+    "domain": "discord.com",
+    "since": "2024-10-01",
+    "until": "2024-10-22",
+    "eventDate": "2024-10-08",
+    "description": "OONI reported that Discord was blocked in Russia starting October 8, 2024. The testing volume and types of results vary by day.",
+    "report": "https://explorer.ooni.org/findings/2025-russia-blocked-discord",
+    "sampleMeasurements": true
+  },
+  {
+    "id": "discord-ca-2024",
+    "country": "Canada",
+    "code": "CA",
+    "domain": "discord.com",
+    "since": "2024-10-01",
+    "until": "2024-10-22",
+    "description": "Canadian tests for the same window as the October 2024 cases in Türkiye and Russia, for comparison.",
+    "sampleMeasurements": true
+  },
+  {
+    "id": "zawya-eg",
+    "country": "Egypt",
+    "code": "EG",
+    "domain": "zawia3.com",
+    "since": "2025-02-01",
+    "until": "2025-03-01",
+    "description": "A month of tests targeting the Cairo cinema Zawya’s website, with gaps on days for which OONI returned no measurements.",
+    "sampleMeasurements": true
+  },
+  {
+    "id": "discord-ca",
+    "country": "Canada",
+    "code": "CA",
+    "domain": "discord.com",
+    "days": 31,
+    "description": "A rolling view of tests targeting Discord from Canadian networks. Sparse or missing dates reflect OONI’s coverage, with results drawn only from networks on which tests ran."
+  }
+]

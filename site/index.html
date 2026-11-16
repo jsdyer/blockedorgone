@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore OONI measurements of internet interference and look up the evidence in OONI Explorer.">
+  <meta name="theme-color" content="#17201c">
+  <title>Blocked or Gone? | CoolCode.ca</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="masthead">
+    <div class="wrap top">
+      <a class="brand" href="https://coolcode.ca/">CoolCode<span>.ca</span></a>
+      <nav aria-label="On this page"><a href="#cases">Case library</a><a href="#lookup">Look up a domain</a></nav>
+    </div>
+    <div class="wrap hero">
+      <div>
+        <h1>Blocked or<br>gone<span>?</span></h1>
+        <p>When a website stops loading, follow the network evidence. Explore historical tests of internet access and trace each result back to OONI.</p>
+        <a class="button primary" href="#cases">Explore the cases <span aria-hidden="true">↓</span></a>
+      </div>
+      <aside class="hero-note"><span class="pulse" aria-hidden="true"></span><strong>Open Observatory of Network Interference</strong><p>Public Web Connectivity tests run from networks around the world.</p><a href="https://ooni.org/nettest/web-connectivity/">How the tests work ↗</a></aside>
+    </div>
+  </header>
+  <main class="wrap main" id="main">
+    <section id="cases" aria-labelledby="cases-heading">
+      <div class="section-head"><h2 id="cases-heading">Case library</h2><p>Compare what OONI observed across countries and dates.</p></div>
+      <p class="notice" id="load-status" role="status">Loading measurement snapshots…</p>
+      <noscript><p class="notice">JavaScript is required for the case library. Visit <a href="https://explorer.ooni.org/search">OONI Explorer</a> to browse the source measurements.</p></noscript>
+      <div class="workspace" id="workspace" hidden>
+        <div id="case-list" class="case-list" role="group" aria-label="Measurement cases"></div>
+        <article class="panel" aria-labelledby="case-title">
+          <div class="panel-intro">
+            <div class="case-meta" id="case-meta"></div>
+            <h3 id="case-title"></h3>
+            <p id="case-description"></p>
+            <a id="report-link" hidden>Read OONI’s finding ↗</a>
+          </div>
+          <div class="metrics" id="metrics" aria-label="Period totals"></div>
+          <div class="plot-header">
+            <h4>Daily outcomes</h4>
+            <label class="view-label">Display <select id="view"><option value="count">Test count</option><option value="share">% of daily tests</option></select></label>
+          </div>
+          <p id="event-note" class="event-note" hidden></p>
+          <div id="legend" class="legend" aria-label="Chart legend"></div>
+          <div id="chart" class="chart" role="group" aria-label="Daily outcome chart. Select a date to see details. Use left and right arrows to move between dates."></div>
+          <div class="selection" id="selection" aria-live="polite">
+            <div><strong id="selection-date"></strong><div id="selection-outcomes"></div></div>
+            <a id="day-link">Inspect day in OONI ↗</a>
+          </div>
+          <details class="table-details"><summary>View daily counts as a table</summary><div class="table-scroll" id="table"></div></details>
+          <details class="table-details" id="examples" hidden><summary>Open example measurements</summary><ul id="example-list"></ul></details>
+          <footer class="case-footer"><span id="snapshot"></span><a id="case-link">Open the full period in OONI ↗</a></footer>
+        </article>
+      </div>
+    </section>
+    <section class="lookup" id="lookup" aria-labelledby="lookup-heading">
+      <div>
+        <h2 id="lookup-heading">Look up any domain</h2>
+        <p>Open a filtered search in OONI Explorer. A URL is searched by its hostname.</p>
+      </div>
+      <form id="lookup-form" action="https://explorer.ooni.org/search">
+        <input type="hidden" name="test_name" value="web_connectivity">
+        <label>Domain <input id="domain" name="domain" placeholder="example.org" required maxlength="250" autocapitalize="none" spellcheck="false"></label>
+        <label>Country code <input id="country" name="probe_cc" placeholder="CA or blank" maxlength="2" title="Two-letter country code, or leave blank for all countries"></label>
+        <label>From (UTC) <input id="from" name="since" type="date"></label>
+        <label>Through (UTC) <input id="through" name="until" type="date"></label>
+        <button class="button dark" type="submit">Search OONI <span aria-hidden="true">↗</span></button>
+        <p class="form-error" id="lookup-error" role="alert" hidden></p>
+      </form>
+    </section>
+    <section class="reading" aria-labelledby="reading-heading">
+      <div><h2 id="reading-heading">Reading the evidence</h2><p>These measurements reflect the networks that ran tests. Counts can rise when testing activity increases.</p></div>
+      <dl>
+        <div><dt>No anomaly</dt><dd>OONI found no sign of interference in that measurement.</dd></div>
+        <div><dt>Anomaly</dt><dd>A result differed from expected connectivity. Routine network errors and outages can produce similar results.</dd></div>
+        <div><dt>Confirmed by OONI</dt><dd>A measurement matched an OONI censorship fingerprint, such as a known block page or DNS response.</dd></div>
+        <div><dt>Failed test or no measurements</dt><dd>A failed test could not complete. A coverage gap means the archive returned no tests for that day.</dd></div>
+      </dl>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-grid"><a class="brand" href="https://coolcode.ca/">CoolCode<span>.ca</span></a><p>Data from the <a href="https://api.ooni.io/">OONI API</a> and © 2020 Open Observatory of Network Interference (OONI). CoolCode reformats selected daily aggregates and links to original measurements. Source data and adapted snapshots are licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.</p><a href="https://github.com/jsdyer/blockedorgone">View the code ↗</a></div></footer>
+</body>
+</html>
