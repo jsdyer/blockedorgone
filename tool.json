@@ -1,0 +1,22 @@
+{
+  "id": "blockedorgone",
+  "title": "Blocked or Gone?",
+  "description": "Investigate interference and test coverage in public OONI measurements.",
+  "category": "liminal-tools",
+  "tags": [
+    "censorship",
+    "network",
+    "interference",
+    "ooni"
+  ],
+  "icon": "wifi-off",
+  "url": "/blockedorgone/",
+  "source": "https://github.com/jsdyer/blockedorgone",
+  "hosting": "project",
+  "access": "browser",
+  "data_info": {
+    "mode": "snapshot",
+    "detail": "OONI case studies supply the historical measurements, and a daily check updates the Canadian Discord example.",
+    "cadence": "Daily"
+  }
+}

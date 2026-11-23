@@ -1,5 +1,9 @@
 # Blocked or Gone?
 
+<!-- coolcode:guide -->
+Open a case and compare its daily measurement outcomes, then follow the evidence into OONI Explorer. Use the lookup form for another domain and country; an anomalous measurement alone does not establish intentional blocking.
+<!-- /coolcode:guide -->
+
 A CoolCode.ca research tool for exploring internet interference measurements. The case library compares daily Web Connectivity outcomes for Discord in Türkiye, Russia and Canada and the Zawya cinema site in Egypt. Each chart links to its period, daily evidence and any linked examples in OONI Explorer. The lookup form opens a source search for any domain and an optional country or UTC date range.
 
 ## Develop and deploy
