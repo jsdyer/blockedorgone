@@ -112,6 +112,10 @@ def main():
         shutil.rmtree(dist)
     shutil.copytree(ROOT / "site", dist)
     (dist / "snapshots.json").write_text(json.dumps(output, separators=(",", ":"), ensure_ascii=False) + "\n", encoding="utf8")
+    # Fixed historical cases are intentionally retained; monitor rolling cases only.
+    checks = {case["id"]: case.get("capturedAt") for case in output if "days" in case}
+    oldest = min(checks.values()) if checks and all(checks.values()) else None
+    (dist / "data-status.json").write_text(json.dumps({"oldest_retrieval": oldest, "rolling_cases": checks}) + "\n", encoding="utf8")
     print(f"Built {dist}")
 
 
